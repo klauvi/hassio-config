@@ -1,0 +1,116 @@
+- id: letsencrypt-renewal
+  alias: Let's Encrypt Renewal
+  trigger:
+  - platform: time
+    at: 01:12:43
+  action:
+  - service: hassio.addon_restart
+    data:
+      addon: core_letsencrypt
+- alias: Ryksuga Eldhús
+  id: ryksuga-eldhus
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      repeats: 1
+      zone:
+      - - 30805
+        - 24334
+        - 33555
+        - 26784
+- alias: Ryksuga Borðstofu
+  id: ryksuga-bordstofa
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      repeats: 1
+      zone:
+      - - 24931
+        - 22989
+        - 31331
+        - 28489
+- alias: Ryksuga Forstofu
+  id: ryksuga-forstofa
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      repeats: 1
+      zone:
+      - - 28152
+        - 28502
+        - 33452
+        - 30952
+- alias: Ryksuga Stofu
+  id: ryksuga-stofu
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      repeats: 1
+      zone:
+      - - 22903
+        - 30822
+        - 30803
+        - 35522
+- id: enable_zigbee_join
+  alias: Enable Zigbee joining
+  trigger:
+    platform: state
+    entity_id: input_boolean.zigbee_permit_join
+    to: 'on'
+  action:
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/bridge/config/permit_join
+      payload: 'true'
+  - service: timer.start
+    data:
+      entity_id: timer.zigbee_permit_join
+- id: disable_zigbee_join
+  alias: Disable Zigbee joining
+  trigger:
+  - entity_id: input_boolean.zigbee_permit_join
+    platform: state
+    to: 'off'
+  action:
+  - data:
+      payload: 'false'
+      topic: zigbee2mqtt/bridge/config/permit_join
+    service: mqtt.publish
+  - data:
+      entity_id: timer.zigbee_permit_join
+    service: timer.cancel
+- id: disable_zigbee_join_timer
+  alias: Disable Zigbee joining by timer
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.zigbee_permit_join
+  action:
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/bridge/config/permit_join
+      payload: 'false'
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.zigbee_permit_join

@@ -1,0 +1,39 @@
+- platform: command_line
+  name: CPU Temp
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ "%.2f"|format(value|multiply(0.001)) }}'
+- platform: huesensor
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
+- platform: systemmonitor
+  resources:
+  - type: memory_use_percent
+  - type: disk_use
+    arg: /
+  - type: disk_free
+    arg: /
+  - type: load_1m
+  - type: load_5m
+  - type: load_15m
+  - type: processor_use
+- platform: template
+  sensors:
+    hue_eldhus_battery:
+      friendly_name: Eldhús Hue hreyfiskynjari
+      unit_of_measurement: "%"
+      value_template: "{{state_attr('binary_sensor.eldhus_motion_sensor', 'battery')}}"
+    hue_bilskur_battery:
+      friendly_name: Bílskúr Hue hreyfiskynjari
+      unit_of_measurement: "%"
+      value_template: "{{state_attr('binary_sensor.bilskur_motion_sensor', 'battery')}}"
+    hue_klosett_nidri_battery:
+      friendly_name: Klósett niðri Hue hreyfiskynjari
+      unit_of_measurement: "%"
+      value_template: "{{state_attr('binary_sensor.klosett_nidri_motion_sensor', 'battery')}}"
+    hue_klosett_uppi_battery:
+      friendly_name: Klósett uppi Hue hreyfiskynjari
+      unit_of_measurement: "%"
+      value_template: "{{state_attr('binary_sensor.klosett_uppi_motion_sensor', 'battery')}}"

@@ -1,0 +1,72 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+# Text to speech
+tts:
+  - platform: google_translate
+    language: 'is'
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensor.yaml
+proximity: !include proximity.yaml
+input_boolean: !include input_boolean.yaml
+binary_sensor: !include binary_sensor.yaml
+timer: !include timer.yaml
+
+recorder:
+  db_url: !secret db_url
+
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: !secret influx_user
+  password: !secret influx_pass
+  max_retries: 3
+  default_measurement: state
+
+mqtt:
+  broker: core-mosquitto
+  discovery: true
+
+
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_host
+    token: !secret xiaomi_api
+
+august:
+  login_method: phone
+  username: !secret august_user
+  password: !secret august_pass
+
+ring:
+  username: !secret ring_user
+  password: !secret ring_pass
+
+media_player:
+  - platform: philips_android_tv
+    name: Philips TV
+    host: !secret tv_host
+    mac: !secret tv_mac
+    username: !secret tv_user
+    password: !secret tv_pass
+    favorite_channels_only: true
+
+device_tracker:
+  - platform: cisco_mobility_express
+    host: !secret cisco_host
+    username: !secret cisco_user
+    password: !secret cisco_pass
+    ssl: true
+    verify_ssl: false
+    consider_home: 180

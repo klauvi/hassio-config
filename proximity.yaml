@@ -1,0 +1,28 @@
+finnur_from_work:
+  zone: sensa
+  devices:
+    - device_tracker.finnur_iphone_3
+  tolerance: 50
+  unit_of_measurement: m
+finnur_from_home:
+  zone: home
+  devices:
+    - device_tracker.finnur_iphone_3
+    - device_tracker.life360_finnur
+  tolerance: 50
+  unit_of_measurement: m
+lovisa_from_home:
+  zone: home
+  devices:
+    - device_tracker.life360_lovisa
+    - device_tracker.sm_g973f_s10
+  tolerance: 50
+  unit_of_measurement: m
+home:
+  devices:
+    - device_tracker.life360_lovisa
+    - device_tracker.finnur_iphone_3
+    - device_tracker.life360_finnur
+    - device_tracker.sm_g973f_s10
+  tolerance: 50
+  unit_of_measurement: m

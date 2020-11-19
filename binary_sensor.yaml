@@ -1,0 +1,64 @@
+- platform: huesensor 
+- platform: bayesian
+  name: Finnur Heima
+  prior: 0.5
+  probability_threshold: 0.9
+  observations:
+    - platform: numeric_state
+      entity_id: proximity.finnur_from_home
+      prob_given_true: 0.9
+      below: 100
+    - platform: numeric_state
+      entity_id: proximity.finnur_from_home
+      prob_given_true: 0.1
+      above: 500
+    - platform: state
+      entity_id: device_tracker.finnur_iphone_3
+      prob_given_true: 0.9
+      to_state: home
+    - platform: state
+      entity_id: device_tracker.finnursplewatch
+      prob_given_true: 0.9
+      to_state: home
+- platform: bayesian
+  name: Lovisa Heima
+  prior: 0.5
+  probability_threshold: 0.9
+  observations:
+    - platform: numeric_state
+      entity_id: proximity.lovisa_from_home
+      prob_given_true: 0.9
+      below: 100
+    - platform: numeric_state
+      entity_id: proximity.lovisa_from_home
+      prob_given_true: 0.1
+      above: 500
+    - platform: state
+      entity_id: device_tracker.sm_g973f_s10
+      prob_given_true: 0.9
+      to_state: home
+- platform: bayesian
+  name: Enginn Heima
+  prior: 0.25
+  probability_threshold: 0.9
+  observations:
+    - platform: state
+      entity_id: binary_sensor.finnur_heima
+      prob_given_true: 0.95
+      prob_given_false: 0.33
+      to_state: off
+    - platform: state
+      entity_id: binary_sensor.lovisa_heima
+      prob_given_true: 0.95
+      prob_given_false: 0.33
+      to_state: off
+    - platform: state
+      entity_id: lock.lock
+      prob_given_true: 0.95
+      prob_given_false: 0.5
+      to_state: locked
+    - platform: state
+      entity_id: alarm_control_panel.my_location_alarm
+      prob_given_true: 0.95
+      prob_given_false: 0.5
+      to_state: armed_home

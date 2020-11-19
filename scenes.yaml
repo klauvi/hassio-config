@@ -1,0 +1,214 @@
+- id: '1602517331673'
+  name: Gangur Niðri
+  entities:
+    light.hue_milliskin_spot_1:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 255
+      color_temp: 366
+      friendly_name: Gangur niðri eldhús
+      supported_features: 43
+      state: 'on'
+    light.hue_milliskin_spot_2:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 255
+      color_temp: 366
+      friendly_name: Gangur niðri forstofa
+      supported_features: 43
+      state: 'on'
+    light.hue_milliskin_spot_3:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 255
+      color_temp: 366
+      friendly_name: Gangur niðri
+      supported_features: 43
+      state: 'on'
+- id: '1605477956341'
+  name: Eldhusparty
+  entities:
+    light.eldhus_vaskur_l:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 316.364
+      - 69.02
+      rgb_color:
+      - 255
+      - 78
+      - 206
+      xy_color:
+      - 0.442
+      - 0.208
+      effect: none
+      friendly_name: Eldhús vaskur L
+      supported_features: 63
+      state: 'on'
+    light.eldhus_vaskur_m:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 135.529
+      - 100
+      rgb_color:
+      - 0
+      - 255
+      - 65
+      xy_color:
+      - 0.17
+      - 0.7
+      effect: none
+      friendly_name: Eldhús vaskur M
+      supported_features: 63
+      state: 'on'
+    light.eldhus_vaskur_r:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 249.906
+      - 83.137
+      rgb_color:
+      - 78
+      - 43
+      - 255
+      xy_color:
+      - 0.168
+      - 0.066
+      effect: none
+      friendly_name: Eldhús vaskur R
+      supported_features: 63
+      state: 'on'
+    light.eldhus:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 43
+      color_temp: 454
+      friendly_name: Eldhús
+      supported_features: 43
+      state: 'on'
+- id: '1605478211699'
+  name: Eldhus venjulegt
+  entities:
+    light.eldhus_vaskur_l:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      color_temp: 399
+      effect: none
+      friendly_name: Eldhús vaskur L
+      supported_features: 63
+      state: 'on'
+    light.eldhus_vaskur_m:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      color_temp: 398
+      effect: none
+      friendly_name: Eldhús vaskur M
+      supported_features: 63
+      state: 'on'
+    light.eldhus_vaskur_r:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      color_temp: 397
+      effect: none
+      friendly_name: Eldhús vaskur R
+      supported_features: 63
+      state: 'on'
+    light.eldhus:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 255
+      color_temp: 397
+      friendly_name: Eldhús
+      supported_features: 43
+      state: 'on'
+- id: '1605478874689'
+  name: Kvold nidri
+  entities:
+    light.hue_milliskin_spot_2:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 102
+      color_temp: 366
+      friendly_name: Gangur niðri forstofa
+      supported_features: 43
+      state: 'on'
+    light.hue_milliskin_spot_1:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 102
+      color_temp: 366
+      friendly_name: Gangur niðri eldhús
+      supported_features: 43
+      state: 'on'
+    light.hue_milliskin_spot_3:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 102
+      color_temp: 366
+      friendly_name: Gangur niðri
+      supported_features: 43
+      state: 'on'
+    light.stofa:
+      min_mireds: 153
+      max_mireds: 454
+      friendly_name: Stofa
+      supported_features: 43
+      state: 'off'
+    light.stofulampi:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 153
+      color_temp: 366
+      effect: none
+      friendly_name: Stofulampi
+      supported_features: 63
+      state: 'on'
+    light.forstofa:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 128
+      hs_color:
+      - 38.667
+      - 52.941
+      rgb_color:
+      - 255
+      - 207
+      - 120
+      xy_color:
+      - 0.457
+      - 0.41
+      effect: none
+      friendly_name: Forstofa
+      supported_features: 63
+      state: 'on'
