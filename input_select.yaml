@@ -1,0 +1,7 @@
+select_floorplan:
+  name: Floor Plan
+  options:
+    - nidri
+    - uppi
+  initial: nidri
+  icon: mdi:floor-plan

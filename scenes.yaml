@@ -173,12 +173,6 @@
       friendly_name: Gangur niðri
       supported_features: 43
       state: 'on'
-    light.stofa:
-      min_mireds: 153
-      max_mireds: 454
-      friendly_name: Stofa
-      supported_features: 43
-      state: 'off'
     light.stofulampi:
       min_mireds: 153
       max_mireds: 500
@@ -211,4 +205,20 @@
       effect: none
       friendly_name: Forstofa
       supported_features: 63
+      state: 'on'
+    light.stofa_a:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 64
+      color_temp: 399
+      friendly_name: Stofa A
+      supported_features: 43
+      state: 'on'
+    light.stofa_v:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 64
+      color_temp: 401
+      friendly_name: Stofa V
+      supported_features: 43
       state: 'on'

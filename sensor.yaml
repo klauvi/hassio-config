@@ -37,3 +37,223 @@
       friendly_name: Klósett uppi Hue hreyfiskynjari
       unit_of_measurement: "%"
       value_template: "{{state_attr('binary_sensor.klosett_uppi_motion_sensor', 'battery')}}"
+    eldhus_vaskur_l_color:
+      value_template: >-
+        {% if is_state('light.eldhus_vaskur_l', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.eldhus_vaskur_l','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.eldhus_vaskur_l', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
+    eldhus_vaskur_m_color:
+      value_template: >-
+        {% if is_state('light.eldhus_vaskur_m', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.eldhus_vaskur_m','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.eldhus_vaskur_m', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
+    eldhus_vaskur_r_color:
+      value_template: >-
+        {% if is_state('light.eldhus_vaskur_r', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.eldhus_vaskur_r','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.eldhus_vaskur_r', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
+    forstofa_color:
+      value_template: >-
+        {% if is_state('light.forstofa', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.forstofa','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.forstofa', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
+    saevar_color:
+      value_template: >-
+        {% if is_state('light.saevar', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.saevar','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.saevar', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
+    saevar_lampi_color:
+      value_template: >-
+        {% if is_state('light.saevar_lampi', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.saevar_lampi','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.saevar_lampi', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
+    kolbrun_color:
+      value_template: >-
+        {% if is_state('light.kolbrun', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.kolbrun','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.kolbrun', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
+    dagmar_color:
+      value_template: >-
+        {% if is_state('light.dagmar', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.dagmar','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.dagmar', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
+    stofulampi_color:
+      value_template: >-
+        {% if is_state('light.stofulampi', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.stofulampi','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.stofulampi', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
+    utiljos_color:
+      value_template: >-
+        {% if is_state('light.utiljos', 'off') %}
+          off
+        {% else %}
+          {% if state_attr('light.utiljos','color_temp')%}
+            yellow
+          {% else %}
+            {% set x = state_attr('light.utiljos', 'hs_color') | regex_replace(find=',.*', replace='', ignorecase=false) | replace('(', '') | float %}
+            {% if x > 270 %}
+              red
+            {% elif x > 180 %}
+              blue
+            {% elif x > 80 %}
+              green
+            {% elif x > 30 %}
+              yellow
+            {% else %}
+              red
+            {% endif %}
+          {% endif %}
+        {% endif %}
