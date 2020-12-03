@@ -16,11 +16,11 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
-sensor: !include sensor.yaml
+sensor: !include_dir_merge_list sensors/
 proximity: !include proximity.yaml
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
-binary_sensor: !include binary_sensor.yaml
+binary_sensor: !include_dir_merge_list binary/
 timer: !include timer.yaml
 
 recorder:
@@ -39,12 +39,7 @@ influxdb:
 mqtt:
   broker: core-mosquitto
   discovery: true
-
-
-vacuum:
-  - platform: xiaomi_miio
-    host: !secret xiaomi_host
-    token: !secret xiaomi_api
+  discovery_prefix: homeassistant
 
 august:
   login_method: phone
@@ -72,3 +67,13 @@ device_tracker:
     ssl: true
     verify_ssl: false
     consider_home: 180
+
+camera:
+  - platform: generic
+    name: Vacuum Map
+    still_image_url: https://klauvi.is:8123/local/navmap.png
+    content_type: image/png
+    framerate: 1
+  - platform: xiaomi_vacuum_map
+    vacuum_ssh: "root@10.22.2.106"
+    vacuum_entity: "vacuum.roborock"

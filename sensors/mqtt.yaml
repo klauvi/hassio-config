@@ -1,0 +1,10 @@
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
+- platform: mqtt
+  name: Range
+  state_topic: "ovms/homeassistant/yhk20/metric/v/b/range/#"
+- platform: mqtt
+  name: SoC
+  state_topic: "ovms/homeassistant/yhk20/metric/v/b/soc"

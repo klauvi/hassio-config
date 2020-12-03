@@ -1,0 +1,17 @@
+- platform: command_line
+  name: CPU Temp
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ "%.2f"|format(value|multiply(0.001)) }}'
+- platform: huesensor
+- platform: systemmonitor
+  resources:
+  - type: memory_use_percent
+  - type: disk_use
+    arg: /
+  - type: disk_free
+    arg: /
+  - type: load_1m
+  - type: load_5m
+  - type: load_15m
+  - type: processor_use
