@@ -1,0 +1,36 @@
+leaf_turn_heater_off:
+  alias: Leaf Turn Heater Off
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: ovms/homeassistant/yhk20/client/ha/command/climate
+      payload: climatecontrol off
+  mode: single
+  icon: mdi:fan-off
+leaf_turn_heater_on:
+  alias: Leaf Turn Heater On
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: ovms/homeassistant/yhk20/client/ha/command/climate
+      payload: climatecontrol on
+  mode: single
+  icon: mdi:car-defrost-front
+leaf_connect_client:
+  alias: Leaf Connect Client
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: ovms/homeassistant/yhk20/client/ha/active
+      payload: 1
+  mode: single
+  icon: mdi:lan-connect
+leaf_disconnect_client:
+  alias: Leaf Disconnect Client
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: ovms/homeassistant/yhk20/client/ha/active
+      payload: 0
+  mode: single
+  icon: mdi:lan-disconnect

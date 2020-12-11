@@ -1,0 +1,388 @@
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/m/net/mdm/network
+  device_class: signal_strength
+  name: Leaf Mobile Network
+  unique_id: yhk20_module_mobile_network
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/m/net/provider
+  device_class: signal_strength
+  name: Leaf Current Network
+  unique_id: yhk20_module_current_network
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/m/net/type
+  device_class: signal_strength
+  icon: mdi:car-connected
+  name: Leaf Current Network Type
+  unique_id: yhk20_module_network_type
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/m/net/wifi/network
+  device_class: signal_strength
+  name: Leaf Wifi Network
+  unique_id: yhk20_module_wifi_network
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/m/time/utc
+  device_class: timestamp
+  name: Leaf Module Uptime
+  unique_id: yhk20_module_uptime
+  value_template: "{{ value | timestamp_utc }}"
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/m/version
+  name: Leaf Module Version
+  unique_id: yhk20_module_version
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/s/v3/peers
+  name: Leaf MQTT peers
+  unique_id: yhk20_service_mqtt_peers
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/12v/voltage
+  device_class: voltage
+  icon: mdi:car-battery
+  name: Leaf 12V Voltage
+  unique_id: yhk20_12v_battery_voltage
+  unit_of_measurement: V
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/12v/voltage/ref
+  device_class: voltage
+  icon: mdi:car-battery
+  name: Leaf 12V Reference Voltage
+  unique_id: yhk20_12v_battery_voltage_ref
+  unit_of_measurement: V
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/cac
+  device_class: battery
+  name: Leaf Battery Capacity
+  unique_id: yhk20_battery_capacity
+  unit_of_measurement: Ah
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/current
+  device_class: current
+  name: Leaf Battery Current
+  unique_id: yhk20_battery_current
+  unit_of_measurement: A
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/energy/recd
+  device_class: energy
+  name: Leaf Battery Energy Recovered
+  unique_id: yhk20_battery_energy_recd
+  unit_of_measurement: kWh
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/energy/used
+  device_class: energy
+  name: Leaf Battery Energy Used
+  unique_id: yhk20_battery_energy_used
+  unit_of_measurement: kWh
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/p/temp/avg
+  device_class: temperature
+  name: Leaf Batterypack Temp avg
+  unique_id: yhk20_batterypack_temp_avg
+  unit_of_measurement: °C
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/p/temp/max
+  device_class: temperature
+  name: Leaf Batterypack Temp max
+  unique_id: yhk20_batterypack_temp_max
+  unit_of_measurement: °C
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/p/temp/min
+  device_class: temperature
+  name: Leaf Batterypack Temp min
+  unique_id: yhk20_batterypack_temp_min
+  unit_of_measurement: °C
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/p/voltage/avg
+  device_class: voltage
+  name: Leaf Batterypack Voltage avg
+  unique_id: yhk20_batterypack_voltage_avg
+  unit_of_measurement: V
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/p/voltage/max
+  device_class: voltage
+  name: Leaf Batterypack Voltage max
+  unique_id: yhk20_batterypack_voltage_max
+  unit_of_measurement: V
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/p/voltage/min
+  device_class: voltage
+  name: Leaf Batterypack Voltage min
+  unique_id: yhk20_batterypack_voltage_min
+  unit_of_measurement: V
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/power
+  device_class: power
+  name: Leaf Battery Power
+  unique_id: yhk20_battery_power
+  unit_of_measurement: kW
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/range/est
+  icon: mdi:car-info
+  name: Leaf Range Estimated
+  unique_id: yhk20_battery_range_est
+  unit_of_measurement: km
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/range/ideal
+  icon: mdi:car-info
+  name: Leaf Range Ideal
+  unique_id: yhk20_battery_range_ideal
+  unit_of_measurement: km
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/range/full
+  icon: mdi:car-info
+  name: Leaf Range if Full
+  unique_id: yhk20_battery_range_full
+  unit_of_measurement: km
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/soc
+  device_class: battery
+  name: Leaf Battery Charge
+  unique_id: yhk20_battery_soc
+  unit_of_measurement: '%'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/soh
+  device_class: battery
+  name: Leaf Battery Health
+  unique_id: yhk20_battery_soh
+  unit_of_measurement: '%'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/temp
+  device_class: temperature
+  name: Leaf Battery Temperature
+  unique_id: yhk20_battery_temp
+  unit_of_measurement: °C
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/voltage
+  device_class: voltage
+  name: Leaf Battery Voltage
+  unique_id: yhk20_battery_voltage
+  unit_of_measurement: V
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/climit
+  device_class: current
+  name: Leaf Charging Max Current
+  unique_id: yhk20_charging_climit
+  unit_of_measurement: A
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/current
+  device_class: current
+  name: Leaf Charging Current
+  unique_id: yhk20_charging_current
+  unit_of_measurement: A
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/duration/full
+  device_class: timestamp
+  name: Leaf Charging Time Until Full
+  unique_id: yhk20_charging_duration_full
+  unit_of_measurement: min
+  value_template: "{{ ((as_timestamp(now()) | float) + (value | float) * 60) | timestamp_utc }}"
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/efficiency
+  device_class: power_factor
+  name: Leaf Charging Efficiency
+  unique_id: yhk20_charging_efficiency
+  unit_of_measurement: '%'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/kwh
+  device_class: energy
+  name: Leaf Charging Total
+  unique_id: yhk20_charging_kwh
+  unit_of_measurement: kWh
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/power
+  device_class: power
+  name: Leaf Charging Power
+  unique_id: yhk20_charging_power
+  unit_of_measurement: kW
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/state
+  icon: mdi:ev-station
+  name: Leaf Charging State
+  unique_id: yhk20_charging_state
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/substate
+  icon: mdi:ev-station
+  name: Leaf Charging Substate
+  unique_id: yhk20_charging_substate
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/temp
+  device_class: temperature
+  name: Leaf Charger Temperature
+  unique_id: yhk20_charging_temp
+  unit_of_measurement: °C
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/time
+  device_class: timestamp
+  name: Leaf Charging Time
+  unique_id: yhk20_charging_time
+  unit_of_measurement: s
+  value_template: "{% if (value | float) > 0 %}{{ ((as_timestamp(now()) | float) - (value | float)) | timestamp_utc }}{% else %} 0 {% endif %}"
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/type
+  icon: mdi:ev-plug-type2
+  name: Leaf Charger Type
+  unique_id: yhk20_charging_type
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/voltage
+  device_class: voltage
+  name: Leaf Charging Voltage
+  unique_id: yhk20_charging_voltage
+  unit_of_measurement: V
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/cabintemp
+  device_class: temperature
+  name: Leaf Cabin Temperature
+  unique_id: yhk20_env_cabintemp
+  unit_of_measurement: °C
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/cabin/fan
+  icon: mdi:fan
+  name: Leaf Cabin Fan
+  unique_id: yhk20_env_cabin_fan
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/cabin/fanlimit
+  icon: mdi:fan
+  name: Leaf Cabin Fan Limit
+  unique_id: yhk20_env_cabin_fanlimit
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/cabin/setpoint
+  device_class: temperature
+  name: Leaf Cabin Temp Setpoint
+  unique_id: yhk20_env_cabin_setpoint
+  unit_of_measurement: °C
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/cabin/vent
+  icon: mdi:car-defrost-front
+  name: Leaf Cabin Vent
+  unique_id: yhk20_env_cabin_vent
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/drivetime
+  device_class: timestamp
+  name: Leaf Drive Time
+  unique_id: yhk20_env_drivetime
+  value_template: "{% if (value | float) > 0 %}{{ ((as_timestamp(now()) | float) - (value | float)) | timestamp_utc }}{% else %} 0 {% endif %}"
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/footbrake
+  icon: mdi:car-brake-alert
+  name: Leaf Footbrake State
+  unique_id: yhk20_env_footbrake
+  unit_of_measurement: '%'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/gear
+  icon: mdi:car-shift-pattern
+  name: Leaf Gear
+  unique_id: yhk20_env_gear
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/parktime
+  device_class: timestamp
+  name: Leaf Parking Time
+  unique_id: yhk20_env_parktime
+  value_template: "{% if (value | float) > 0 %}{{ ((as_timestamp(now()) | float) - (value | float)) | timestamp_utc }}{% else %} 0 {% endif %}"
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/temp
+  device_class: temperature
+  name: Leaf Outside Temperature
+  unique_id: yhk20_env_outside_temp
+  unit_of_measurement: °C
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/throttle
+  icon: mdi:speedometer
+  name: Leaf Throttle
+  unique_id: yhk20_env_throttle
+  unit_of_measurement: '%'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/m/rpm
+  icon: mdi:engine
+  name: Leaf Motor RPM
+  unique_id: yhk20_motor_rpm
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/altitude
+  icon: mdi:altimeter
+  name: Leaf Altitude
+  unique_id: yhk20_presence_altitude
+  unit_of_measurement: m
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/direction
+  icon: mdi:compass
+  name: Leaf direction
+  unique_id: yhk20_presence_direction
+  unit_of_measurement: °
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/gpsspeed
+  icon: mdi:speedometer
+  name: Leaf GPS Speed
+  unique_id: yhk20_presence_gpsspeed
+  unit_of_measurement: km/h
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/latitude
+  icon: mdi:latitude
+  name: Leaf Latitude
+  unique_id: yhk20_presence_latitude
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/longitude
+  icon: mdi:longitude
+  name: Leaf Longitude
+  unique_id: yhk20_presence_longitude
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/location
+  icon: mdi:map-marker
+  name: Leaf Location
+  unique_id: yhk20_presence_location
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/odometer
+  icon: mdi:counter
+  name: Leaf Odometer
+  unique_id: yhk20_presence_odometer
+  unit_of_measurement: km
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/satcount
+  name: Leaf GPS Sat count
+  unique_id: yhk20_presence_satcount
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/speed
+  icon: mdi:speedometer
+  name: Leaf Speed
+  unique_id: yhk20_presence_speed
+  unit_of_measurement: km/h
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/tp/fl/p
+  device_class: pressure
+  icon: mdi:car-tire-alert
+  name: Leaf Front Left Tyre Pressure
+  unique_id: yhk20_tyrepressure_fl
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/tp/fr/p
+  device_class: pressure
+  icon: mdi:car-tire-alert
+  name: Leaf Front Right Tyre Pressure
+  unique_id: yhk20_tyrepressure_fr
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/tp/rl/p
+  device_class: pressure
+  icon: mdi:car-tire-alert
+  name: Leaf Rear Left Tyre Pressure
+  unique_id: yhk20_tyrepressure_rl
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/tp/rr/p
+  device_class: pressure
+  icon: mdi:car-tire-alert
+  name: Leaf Rear Right Tyre Pressure
+  unique_id: yhk20_tyrepressure_rr
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/client/ha/command/climate
+  name: Leaf Climate Command
+  unique_id: yhk20_command_climate
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/client/ha/response/climate
+  name: Leaf Climate Command Result
+  unique_id: yhk20_response_climate
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/client/ha/command/other
+  name: Leaf Command
+  unique_id: yhk20_command_other
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/client/ha/response/other
+  name: Leaf Command Result
+  unique_id: yhk20_response_other
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/event
+  name: Leaf Event
+  unique_id: yhk20_event

@@ -69,11 +69,6 @@ device_tracker:
     consider_home: 180
 
 camera:
-  - platform: generic
-    name: Vacuum Map
-    still_image_url: https://klauvi.is:8123/local/navmap.png
-    content_type: image/png
-    framerate: 1
   - platform: xiaomi_vacuum_map
     vacuum_ssh: "root@10.22.2.106"
     vacuum_entity: "vacuum.roborock"

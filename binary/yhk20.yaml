@@ -1,0 +1,133 @@
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/s/v3/connected
+  device_class: connectivity
+  name: Leaf MQTT connected
+  unique_id: yhk20_service_mqtt_connected
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/b/12v/voltage/alert
+  device_class: problem
+  name: Leaf 12V Voltage Alert
+  unique_id: yhk20_12v_battery_voltage_alert
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/charging
+  device_class: battery_charging
+  name: Leaf Charging
+  unique_id: yhk20_charging_car
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/c/pilot
+  device_class: light
+  name: Leaf Pilot Signal
+  unique_id: yhk20_pilot_signal
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/d/cp
+  device_class: garage_door
+  name: Leaf Charge Port
+  unique_id: yhk20_door_cp
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/d/fl
+  device_class: door
+  name: Leaf Front Left Door
+  unique_id: yhk20_door_fl
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/d/fr
+  device_class: door
+  name: Leaf Front Right Door
+  unique_id: yhk20_door_fr
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/d/rl
+  device_class: door
+  name: Leaf Rear Left Door
+  unique_id: yhk20_door_rl
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/d/rr
+  device_class: door
+  name: Leaf Rear Right Door
+  unique_id: yhk20_door_rr
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/d/trunk
+  device_class: opening
+  name: Leaf Trunk
+  unique_id: yhk20_door_trunk
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/awake
+  device_class: power
+  name: Leaf Awake
+  unique_id: yhk20_env_awake
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/cooling
+  device_class: cold
+  name: Leaf Cooling
+  unique_id: yhk20_env_cooling
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/handbrake
+  device_class: safety
+  name: Leaf Handbrake
+  unique_id: yhk20_env_handbrake
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/headlights
+  device_class: light
+  name: Leaf Headlights
+  unique_id: yhk20_env_headlights
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/heating
+  device_class: heat
+  name: Leaf Heating
+  unique_id: yhk20_env_heating
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/hvac
+  device_class: cold
+  name: Leaf HVAC
+  unique_id: yhk20_env_hvac
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/locked
+  device_class: lock
+  name: Leaf Locked
+  unique_id: yhk20_env_locked
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/e/on
+  device_class: power
+  name: Leaf On
+  unique_id: yhk20_env_on
+  payload_on: 'yes'
+  payload_off: 'no'
+- platform: mqtt
+  state_topic: ovms/homeassistant/yhk20/metric/v/p/gpslock
+  device_class: connectivity
+  name: Leaf GPS Lock
+  unique_id: yhk20_presence_gpslock
+  payload_on: 'yes'
+  payload_off: 'no'
