@@ -1,0 +1,35 @@
+esphome:
+  name: esp32_testboard
+  platform: esp32
+  board: esp32dev
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp32 Testboard Fallback Hotspot"
+    password: !secret backup_ap_pass
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret ota_pass
+
+ota:
+  password: !secret ota_pass
+
+sensor:
+  - platform: dht
+    pin: GPIO4
+    model: dht11
+    temperature:
+      name: "Test temp"
+    humidity:
+      name: "Test humidity"
+    update_interval: 10s
