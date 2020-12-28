@@ -4,5 +4,4 @@ zigbee_permit_join:
     icon: mdi:cellphone-wireless
 ljos_automation_morgunn:
     name: Morgunrútína virk
-    initial: on
     icon: mdi:calendar

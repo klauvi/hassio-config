@@ -1,5 +1,7 @@
+homeassistant:
+  packages: !include_dir_named packages
 
-# Configure a default setup of Home Assistant (frontend, api, etc)
+  # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
@@ -9,8 +11,11 @@ http:
 
 # Text to speech
 tts:
-  - platform: google_translate
-    language: 'is'
+  - platform: amazon_polly
+    aws_access_key_id: !secret amazon_access_key_id
+    aws_secret_access_key: !secret amazon_secret_access_key
+    region_name: eu-west-1
+    voice: Dora
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -22,6 +27,10 @@ input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
 binary_sensor: !include_dir_merge_list binary/
 timer: !include timer.yaml
+light: !include light.yaml
+
+
+system_health:
 
 recorder:
   db_url: !secret db_url

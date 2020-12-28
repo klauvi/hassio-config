@@ -1,0 +1,127 @@
+homeassistant:
+  customize:
+    sensor.washing_machine_status:
+      icon: mdi:washing-machine
+    binary_sensor.door_washingmachine:
+      device_class: opening
+
+group:
+  washing_machine:
+    name: "Þvottavél"
+    entities:
+      - sensor.washing_machine_status
+      - switch.thvottavel
+      - sensor.thvottavel_power
+
+input_boolean:
+  disable_washing_machine_notification:
+    name: Disable Washing Machine Notification
+    initial: off
+    icon: mdi:washing-machine
+
+
+input_select:
+  washing_machine_status:
+    name: Washing Machine Status
+    options:
+      - Idle
+      - Running
+      - Finishing
+      - Clean
+    initial: Idle
+    
+sensor:
+- platform: template
+  sensors:
+  # Washing Machine Status
+    washing_machine_status:
+      value_template: '{{ states.input_select.washing_machine_status.state}}'
+      friendly_name: 'Washing Machine Status'
+
+
+automation:
+  - alias: Set washing machine active when power detected
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.thvottavel_power
+        above: 10
+    condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: sensor.washing_machine_status
+          state: Idle
+        - condition: state
+          entity_id: sensor.washing_machine_status
+          state: Clean
+        - condition: state
+          entity_id: sensor.washing_machine_status
+          state: Finishing
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.washing_machine_status
+          option: Running
+    
+    # When the power drops, move the state of the washing machine to
+    # Finishing.
+    
+  - alias: Set washing machine finished when power drops
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.thvottavel_power
+        below: 3
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.washing_machine_status
+          state: Running
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.washing_machine_status
+          option: Finishing
+    
+    # Wait 1 minutes for us to be in the Finishing state before we
+    # decide the washing machine has finished. This way, if the
+    # washing machine is in between cycles and the power drops, we
+    # won't mark the washing machine cycle as finished too early.
+    
+  - alias: Set washing machine clean after timeout
+    trigger:
+      - platform: state
+        entity_id: input_select.washing_machine_status
+        to: Finishing
+        for:
+          minutes: 1
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.washing_machine_status
+          state: Finishing
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.washing_machine_status
+          option: Clean
+  - alias: Set washing machine dirty when door opens
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.thvottavel_hurd
+        to: 'on'
+    condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: input_select.washing_machine_status
+          state: Clean
+        - condition: state
+          entity_id: input_select.washing_machine_status
+          state: Finishing
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.washing_machine_status
+          option: Idle

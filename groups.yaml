@@ -1,0 +1,62 @@
+leaf_charging:
+  name: Leaf charging status
+  entities:
+    - binary_sensor.leaf_charging
+    - binary_sensor.leaf_charge_port
+    - sensor.leaf_charger_temperature
+    - sensor.leaf_charger_type
+    - sensor.leaf_charging_current
+    - sensor.leaf_charging_efficiency
+    - sensor.leaf_charging_max_current
+    - sensor.leaf_charging_power
+    - sensor.leaf_charging_state
+    - sensor.leaf_charging_substate
+    - sensor.leaf_charging_time
+    - sensor.leaf_charging_time_until_full
+    - sensor.leaf_charging_total
+    - sensor.leaf_charging_voltage
+
+leaf_battery:
+  name: Leaf battery
+  entities:
+    - sensor.leaf_battery_capacity
+    - sensor.leaf_battery_charge
+    - sensor.leaf_battery_current
+    - sensor.leaf_battery_energy_recovered
+    - sensor.leaf_battery_energy_used
+    - sensor.leaf_battery_health
+    - sensor.leaf_battery_power
+    - sensor.leaf_battery_temperature
+    - sensor.leaf_battery_voltage
+    - sensor.leaf_batterypack_temp_avg
+    - sensor.leaf_batterypack_temp_max
+    - sensor.leaf_batterypack_temp_min
+    - sensor.leaf_batterypack_voltage_avg
+    - sensor.leaf_batterypack_voltage_max
+    - sensor.leaf_batterypack_voltage_min
+
+leaf_driving:
+  name: Leaf Environment
+  entities:
+    - binary_sensor.leaf_on
+    - binary_sensor.leaf_headlights
+    - binary_sensor.leaf_handbrake
+    - sensor.leaf_footbrake_state
+    - sensor.leaf_outside_temperature
+    - sensor.leaf_cabin_temperature
+    - binary_sensor.leaf_cooling
+    - binary_sensor.leaf_heating
+    - sensor.leaf_odometer
+    - sensor.leaf_range_estimated
+    - sensor.leaf_range_ideal
+    - sensor.leaf_range_if_full
+    - binary_sensor.leaf_front_left_door
+    - binary_sensor.leaf_front_right_door
+    - binary_sensor.leaf_rear_left_door
+    - binary_sensor.leaf_rear_right_door
+    - binary_sensor.leaf_trunk
+    - sensor.leaf_front_left_tyre_pressure
+    - sensor.leaf_front_right_tyre_pressure
+    - sensor.leaf_rear_left_tyre_pressure
+    - sensor.leaf_rear_right_tyre_pressure
+

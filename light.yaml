@@ -1,0 +1,33 @@
+- platform: group
+  name: Stofa
+  entities:
+    - light.stofa_v
+    - light.stofa_a
+
+- platform: group
+  name: Gangur Niðri
+  entities:
+    - light.gangur_nidri_eldhus
+    - light.gangur_nidri_forstofa
+    - light.gangur_nidri_midja
+
+- platform: group
+  name: Eldhús
+  entities:
+    - light.eldhus_vaskur_r
+    - light.eldhus_vaskur_l
+    - light.eldhus_vaskur_m
+    - light.eldhus
+
+- platform: group
+  name: Gangur uppi
+  entities:
+    - light.gangur_uppi_n
+    - light.gangur_uppi_s
+
+- platform: group
+  name: Baðherbergi uppi
+  entities:
+    - light.bad_uppi_loft
+    - light.bad_uppi_spegill_h
+    - light.bad_uppi_spegill_v
